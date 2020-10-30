@@ -84,7 +84,7 @@ class MainActivity : AppCompatActivity() {
             { _, h, m ->
                 hora = h
                 minuto = m
-                Log.d(LOG_TAG, "OnTimeSetListener " + h + ":" + m)
+                Log.d(LOG_TAG, "OnTimeSetListener $h:$m")
             },
             hora,
             minuto,
@@ -94,6 +94,27 @@ class MainActivity : AppCompatActivity() {
         time_picker.show()
     }
 
+    @Suppress("UNUSED_PARAMETER")
+    fun boton_datepicker_click(View: View) {
+        var dia = Calendar.getInstance().get(Calendar.DAY_OF_MONTH)
+        var mes = Calendar.getInstance().get(Calendar.MONTH) // OJO: De 0 a 11
+        var anio = Calendar.getInstance().get(Calendar.YEAR)
+        Log.d( LOG_TAG, "$dia de $mes de $anio")
+        /*
+        val time_picker = TimePickerDialog(
+            this,
+            { _, h, m ->
+                hora = h
+                minuto = m
+                Log.d(LOG_TAG, "OnTimeSetListener " + h + ":" + m)
+            },
+            hora,
+            minuto,
+            is24HourFormat(this)
+        )
+        time_picker.setMessage("Indique la hora del evento")
+        time_picker.show()*/
+    }
 
 
     override fun onResume() {

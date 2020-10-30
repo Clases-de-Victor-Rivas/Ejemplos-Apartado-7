@@ -4,4 +4,5 @@
     <string name="toque_corto_para_toast_largo_para_snackbar">Toque corto para Toast, largo para Snackbar</string>
     <string name="timepicker">TimePicker</string>
     <string name="mensaje_time_picker">Indíque la hora del evento</string>
+    <string name="datepicker">DatePicker</string>
 </resources>
