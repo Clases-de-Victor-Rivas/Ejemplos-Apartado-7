@@ -12,7 +12,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
     val LOG_TAG = "LOG EN MAINACTIVITY"
-    @Suppress("UNUSED_EXPRESSION")
+    @Suppress("UNUSED_EXPRESSION", "UNUSED_PARAMETER")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         Log.d( LOG_TAG, "Ejecutando método onCreate")
 
         // Uso de TOAST corto
-        layout.setOnClickListener {view->
+        layout.setOnClickListener {
             Toast.makeText(this, "Soy un Toast de duración corta", Toast.LENGTH_SHORT ).show()
             true
         }
@@ -52,13 +52,20 @@ class MainActivity : AppCompatActivity() {
         val dialogo = AlertDialog.Builder(this)
             .setTitle("Soy el título del diálogo")
             .setMessage("Soy el mensaje del diálogo")
-            .setPositiveButton("Aceptar"){ dialogInterface: DialogInterface, i: Int ->
+            .setCancelable(false)
+            .setPositiveButton("Aceptar"){ dialogInterface: DialogInterface, _: Int ->
                Log.d( LOG_TAG, "Aceptar diálogo")
-                //dialogInterface.dismiss() // Elimina el diálogo
+                dialogInterface.dismiss() // Elimina el diálogo. Lanza el evento onDismiss.
             }
-            .setNegativeButton("Cancelar"){ dialogInterface: DialogInterface, i: Int ->
+            .setNegativeButton("Cancelar"){ dialogInterface: DialogInterface, _: Int ->
                 Log.d( LOG_TAG, "Cancelar diálogo")
-                //dialogInterface.cancel() // Cancel lanza el evento OnCancel y posteriormente hace dismiss
+                dialogInterface.cancel() // Elimina el diálogo. Lanza OnCancel y onDismiss
+            }
+            .setOnDismissListener {
+                Log.d( LOG_TAG, "Alert Dialog Dismissed")
+            }
+            .setOnCancelListener {
+                Log.d( LOG_TAG, "Alert dialog Cancelled")
             }
             dialogo.show()
     }
