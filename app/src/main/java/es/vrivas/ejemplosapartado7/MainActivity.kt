@@ -1,14 +1,19 @@
 package es.vrivas.ejemplosapartado7
 
+import android.app.TimePickerDialog
+import android.content.Context
 import android.content.DialogInterface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.format.DateFormat.*
 import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
+import java.text.DateFormat
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
     val LOG_TAG = "LOG EN MAINACTIVITY"
@@ -69,6 +74,26 @@ class MainActivity : AppCompatActivity() {
             }
             dialogo.show()
     }
+
+    @Suppress("UNUSED_PARAMETER")
+    fun boton_timepicker_click(View: View) {
+        var hora = Calendar.getInstance().get(Calendar.HOUR_OF_DAY)
+        var minuto = Calendar.getInstance().get(Calendar.MINUTE)
+        val time_picker = TimePickerDialog(
+            this,
+            { _, h, m ->
+                hora = h
+                minuto = m
+                Log.d(LOG_TAG, "OnTimeSetListener " + h + ":" + m)
+            },
+            hora,
+            minuto,
+            is24HourFormat(this)
+        )
+        time_picker.setMessage("Indique la hora del evento")
+        time_picker.show()
+    }
+
 
 
     override fun onResume() {
