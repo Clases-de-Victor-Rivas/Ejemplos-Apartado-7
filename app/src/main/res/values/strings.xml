@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Ejemplos Apartado 7</string>
+    <string name="di_logo_alert">Diálogo Alert</string>
+    <string name="toque_corto_para_toast_largo_para_snackbar">Toque corto para Toast, largo para Snackbar</string>
 </resources>
