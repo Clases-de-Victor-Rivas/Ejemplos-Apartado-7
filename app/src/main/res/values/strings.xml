@@ -5,4 +5,5 @@
     <string name="timepicker">TimePicker</string>
     <string name="mensaje_time_picker">Indíque la hora del evento</string>
     <string name="datepicker">DatePicker</string>
+    <string name="datepicker_timepicker">DatePicker + Timepicker</string>
 </resources>
