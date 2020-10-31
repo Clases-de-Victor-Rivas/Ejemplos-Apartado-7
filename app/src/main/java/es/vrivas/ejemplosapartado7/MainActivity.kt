@@ -1,5 +1,6 @@
 package es.vrivas.ejemplosapartado7
 
+import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import android.content.Context
 import android.content.DialogInterface
@@ -100,20 +101,20 @@ class MainActivity : AppCompatActivity() {
         var mes = Calendar.getInstance().get(Calendar.MONTH) // OJO: De 0 a 11
         var anio = Calendar.getInstance().get(Calendar.YEAR)
         Log.d( LOG_TAG, "$dia de $mes de $anio")
-        /*
-        val time_picker = TimePickerDialog(
+        val date_picker = DatePickerDialog(
             this,
-            { _, h, m ->
-                hora = h
-                minuto = m
-                Log.d(LOG_TAG, "OnTimeSetListener " + h + ":" + m)
+            { _, y, m, d ->
+                anio = y
+                mes = m+1
+                dia = d
+                Log.d(LOG_TAG, "OnDateSetListener $dia/$mes/$anio")
             },
-            hora,
-            minuto,
-            is24HourFormat(this)
+            anio,
+            mes,
+            dia
         )
-        time_picker.setMessage("Indique la hora del evento")
-        time_picker.show()*/
+        date_picker.setMessage("Indique la fecha del evento")
+        date_picker.show()
     }
 
 
