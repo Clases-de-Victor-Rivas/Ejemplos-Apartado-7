@@ -18,55 +18,54 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.349" />
+        app:layout_constraintVertical_bias="0.238" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/bt_datepicker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:onClick="boton_dialog_alert_click"
-        android:text="@string/di_logo_alert"
-        app:layout_constraintEnd_toEndOf="@+id/textView"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        android:layout_marginTop="28dp"
+        android:onClick="boton_datepicker_click"
+        android:text="@string/datepicker"
+        app:layout_constraintEnd_toEndOf="@+id/bt_timepicker"
+        app:layout_constraintStart_toStartOf="@+id/bt_timepicker"
+        app:layout_constraintTop_toBottomOf="@+id/bt_timepicker" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/bt_timepicker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="36dp"
         android:onClick="boton_timepicker_click"
         android:text="@string/timepicker"
-        app:layout_constraintEnd_toEndOf="@+id/button"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/button"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintEnd_toEndOf="@+id/bt_dialog_alert"
+        app:layout_constraintHorizontal_bias="0.562"
+        app:layout_constraintStart_toStartOf="@+id/bt_dialog_alert"
+        app:layout_constraintTop_toBottomOf="@+id/bt_dialog_alert" />
 
     <Button
-        android:id="@+id/button4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:onClick="boton_datepicker_click"
-        android:text="@string/datepicker"
-        app:layout_constraintEnd_toEndOf="@+id/button3"
-        app:layout_constraintHorizontal_bias="0.518"
-        app:layout_constraintStart_toStartOf="@+id/button3"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
-
-    <Button
-        android:id="@+id/button2"
+        android:id="@+id/bt_date_time_picker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="6dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="36dp"
         android:onClick="boton_datepicker_timepicker_click"
         android:text="@string/datepicker_timepicker"
-        app:layout_constraintEnd_toEndOf="@+id/button4"
-        app:layout_constraintStart_toStartOf="@+id/button4"
-        app:layout_constraintTop_toBottomOf="@+id/button4" />
+        app:layout_constraintEnd_toEndOf="@+id/bt_datepicker"
+        app:layout_constraintStart_toStartOf="@+id/bt_datepicker"
+        app:layout_constraintTop_toBottomOf="@+id/bt_datepicker" />
+
+    <Button
+        android:id="@+id/bt_dialog_alert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:onClick="boton_dialog_alert_click"
+        android:text="@string/di_logo_alert"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
